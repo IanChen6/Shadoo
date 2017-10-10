@@ -20,4 +20,5 @@ from django.views.generic import TemplateView
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', TemplateView.as_view(template_name="index.html"),name="index")#1.配置首页,2.html的名称 3.为url起名
+    url(r'^suggest/$', TemplateView.as_view(template_name="index.html"),name="index")
 ]
