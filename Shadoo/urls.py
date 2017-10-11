@@ -16,9 +16,12 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.views.generic import TemplateView
+from search.views import SearchSuggest,SearchView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', TemplateView.as_view(template_name="index.html"),name="index")#1.配置首页,2.html的名称 3.为url起名
-    url(r'^suggest/$', TemplateView.as_view(template_name="index.html"),name="index")
+    url(r'^$', TemplateView.as_view(template_name="index.html"),name="index"),#1.配置首页,2.html的名称 3.为url起名
+    url(r'^suggest/$', SearchSuggest.as_view(),name="suggest"),
+    url(r'^search/$', SearchView.as_view(),name="search")
+
 ]
