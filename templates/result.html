@@ -41,7 +41,7 @@
                     </li>
                     <li>
                     	<span class="name">拉勾网</span>
-						<span class="unit">(9862)</span>
+						<span class="unit">{{ lagoujob_count }}</span>
                     </li>
                     <li class="more">
                     	<a href="javascript:;">
@@ -104,8 +104,12 @@
             	<div class="hotSearch">
                 	<h6>热门搜索</h6>
                     <ul class="historyList">
-                        
-                            <li><a href="/search?q=linux">linux</a></li>
+                            {% for search_word in topn_search %}
+                                <li><a href="/search?q={{ search_word }}">{{ search_word }}</a></li>
+
+                            {% endfor %}
+
+
                         
                     </ul>
                 </div>
